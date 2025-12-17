@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Start Screen -->
+    <div id="start-screen" class="screen">
+        <div class="start-content">
+            <h1>Welcome to Hangman!</h1>
+            <p>Guess the word one letter at a time. You have 6 incorrect guesses. Good luck!</p>
+            <button id="start-btn">Start Game</button>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen hidden">
+        <div class="container">
+            <h1>Hangman Game</h1>
+            <p>Guess the word one letter at a time. You have 6 incorrect guesses!</p>
+            
+            <div id="word-display">_ _ _ _ _</div>
+            <div id="guessed-letters">Guessed letters: </div>
+            <div id="incorrect-count">Incorrect guesses left: 6</div>
+            
+            <input type="text" id="guess-input" maxlength="1" placeholder="Enter a letter">
+            <button id="guess-btn">Guess</button>
+            <button id="new-game-btn">New Game</button>
+        </div>
+    </div>
+
+    <!-- End Game Popup -->
+    <div id="end-popup" class="popup hidden">
+        <div class="popup-content">
+            <h2 id="popup-title">Game Over</h2>
+            <p id="popup-message">You won! The word was 'apple'.</p>
+            <button id="play-again-btn">Play Again</button>
+            <button id="close-popup-btn">Close</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
