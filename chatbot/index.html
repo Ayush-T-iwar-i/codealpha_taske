@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            🤖 Advanced Chatbot
+            <a href="/reset" class="reset-btn">Reset Chat</a>
+        </div>
+        <div class="chat-messages" id="messages">
+            {% for msg in chat_history %}
+                <div class="message {{ msg.sender }}">{{ msg.message }}</div>
+            {% endfor %}
+        </div>
+        <form class="chat-input" action="/send" method="post">
+            <input type="text" name="message" placeholder="Type a message... (e.g., hello)" required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <script>
+        // Auto-scroll to bottom on load (advanced JS touch)
+        const messages = document.getElementById('messages');
+        messages.scrollTop = messages.scrollHeight;
+    </script>
+</body>
+</html>
